@@ -1,53 +1,59 @@
 #include<iostream>
-#include<unordered_map>
-#include<multi
+#include<vector>
+#include<algorithm>
+#include<set>
 using namespace std;
 class Solution {
 public:
-    vector<int> twoSum(vector<int>& nums, int target)
+vector<vector<int>> ans;
+
+// this.st.insert({0})
+
+    void TwoSum(int left, int right, int sum, int current, vector<int> nums, set<vector<int>> st)
     {
-        int x;
-        for (int i = 0; i < nums.size(); i++)
-        {
-            
-
+        while(left<right)
+        {    
+            // st.insert({0});
+            if(nums[left]+nums[right]==sum) 
+            {
+                if (st.find({current,nums[left], nums[right]})==st.end())
+                    {   ans.push_back({current,nums[left], nums[right]});
+                        st.insert({current,nums[left], nums[right]});
+                    }
+                
+                left++; 
+                right--;
+            }
+            else if (nums[left]+nums[right]<sum) left++;
+            else right--;
         }
-        
-        for (int i = 0; i < nums.size(); i++)
-        {
-            x=target-nums[i];
-        }
-        
-
-
-
-    };
-
+    }
     vector<vector<int>> threeSum(vector<int>& nums) {
-        int target =0;
-        int num;
-        
-        for (int  i = 0; i < nums.size(); i++)
+            
+        sort(nums.begin(),nums.end());
+
+            set<vector<int>> st;
+        for(int i=0; i<nums.size()-2; i++) 
         {
-            num=target-nums[i];
-
+            // if(nums[i]==nums[i+1])
+            //     continue;
+            TwoSum(i+1,nums.size()-1, 0-nums[i],nums[i], nums, st);
         }
-        
 
-
-
-
+    for(auto i:ans)
+       { for(auto y:i)
+            cout<<y<<" ";
+        cout<<endl;
+       }
     }
 };
-
-
-
-
-
 int main()
 {
     
+Solution s1;
 
+vector<int> nums ={-1,0,1,2,-1,-4};
+s1.threeSum(nums);
 
 
 

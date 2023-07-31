@@ -9,14 +9,11 @@ public:
     {
         if(a>="0" && a<="9" || a.length()>1)
         {
-            cout<<a<<" operand hain "<<endl;
+            // cout<<a<<" operand hain "<<endl;
             return true;
         }
         else
         {
-            // if(a.length()>1)
-            // return 
-        // cout<<a<<" not operand "<<endl; 
         return false;
         }    
     }
@@ -38,23 +35,23 @@ public:
                 if(i=="+")
                 {   
                     s.push(x+y);
-                    cout<<"x is "<<x<<" y is "<<y<<" Top element is "<<s.top()<<endl;
+                    // cout<<"x is "<<x<<" y is "<<y<<" Top element is "<<s.top()<<endl;
                 }
                 else if(i=="-")
                 {
                     s.push(x-y);
-                    cout<<"x is "<<x<<" y is "<<y<<" Top element is "<<s.top()<<endl;
+                    // cout<<"x is "<<x<<" y is "<<y<<" Top element is "<<s.top()<<endl;
                 } 
                 else if(i=="/")
                 {
                     s.push(x/y);
 
-                    cout<<"x is "<<x<<" y is "<<y<<" Top element is "<<s.top()<<endl;
+                    // cout<<"x is "<<x<<" y is "<<y<<" Top element is "<<s.top()<<endl;
                 }
                 else if(i=="*")
                 {
                     s.push(x*y);
-                    cout<<"x is "<<x<<" y is "<<y<<" Top element is "<<s.top()<<endl;    
+                    // cout<<"x is "<<x<<" y is "<<y<<" Top element is "<<s.top()<<endl;    
                 }
             }
         }
